@@ -1,0 +1,23 @@
+# Increase volume
+"pactl set-sink-volume @DEFAULT_SINK@ +5000; notify-send "Volume" -i notification-audio-volume-high -h int:value:$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}') -h string:synchronous:volume -h string:x-canonical-private-synchronous:volume"
+	XF86AudioRaiseVolume
+
+# Decrease volume
+"pactl set-sink-volume @DEFAULT_SINK@ -5000; notify-send "Volume" -i notification-audio-volume-high -h int:value:$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}') -h string:synchronous:volume -h string:x-canonical-private-synchronous:volume"
+	XF86AudioLowerVolume
+
+# Mute volume
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+	XF86AudioMute
+
+# Rofi
+"rofi -modi drun -show drun -theme start -location 7 -yoffset -32"
+    Control + Escape
+
+# Rofi run
+"rofi -modi run -show run -theme start -location 7 -yoffset -32"
+	Mod4 + d
+
+# Terminal
+"alacritty"
+    Mod4 + Return
